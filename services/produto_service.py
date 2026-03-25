@@ -15,6 +15,7 @@ COLUNAS_FINAIS = [
     "solicit_compras",
     "compras_pendentes",
     "em_producao",
+    "deposito_indisp",
     "peso_liquido",
     "peso_liquido_ajustado",
     "data_planejamento",
@@ -46,6 +47,7 @@ def carregar_produtos() -> pd.DataFrame:
             reserva_planejamento,
             solicit_compras,
             compras_pendentes,
+            deposito_indisp,
             em_producao,
             peso_liquido,
             data_planejamento
@@ -163,6 +165,7 @@ def tratar_colunas_numericas(df: pd.DataFrame) -> pd.DataFrame:
         "solicit_compras",
         "compras_pendentes",
         "em_producao",
+        "deposito_indisp",
         "peso_liquido",
         "peso_liquido_ajustado",
         "num_of_abertas",
@@ -185,8 +188,17 @@ def tratar_colunas_numericas(df: pd.DataFrame) -> pd.DataFrame:
 
 def calcular_necessidade(df: pd.DataFrame) -> pd.DataFrame:
     df["Necessidade"] = (
-        (df["quantidade"] + df["em_producao"] + df["compras_pendentes"])
-        - (df["pedidos_em_aberto"] + df["reserva_planejamento"] + df["estoque_minimo"])
+        (
+            df["quantidade"]
+            + df["em_producao"]
+            + df["compras_pendentes"]
+            - df["deposito_indisp"]   #  NOVO
+        )
+        - (
+            df["pedidos_em_aberto"]
+            + df["reserva_planejamento"]
+            + df["estoque_minimo"]
+        )
     )
     return df
 
