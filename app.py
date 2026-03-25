@@ -1,16 +1,7 @@
 import streamlit as st
-from modules import reposicao_estoque
 
-st.set_page_config(
-    page_title="Painel de Reposição",
-    page_icon="📦",
-    layout="wide"
-)
+def main():
+    st.title("Painel de Reposição")
+    st.success("✅ Aplicação carregada com sucesso!")
 
-menu = st.sidebar.selectbox(
-    "Selecione a análise",
-    ["Reposição de Estoque"]
-)
-
-if menu == "Reposição de Estoque":
-    reposicao_estoque.main()
+    st.write("Se você está vendo essa mensagem, o deploy está funcionando corretamente.")
