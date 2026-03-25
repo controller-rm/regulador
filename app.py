@@ -1,5 +1,5 @@
 import streamlit as st
-import reposicao_estoque
+from modules import reposicao_estoque
 
 st.set_page_config(
     page_title="Painel de Reposição",
