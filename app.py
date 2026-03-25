@@ -1,6 +1,5 @@
 import streamlit as st
 import reposicao_estoque
-import consumo
 
 st.set_page_config(
     page_title="Painel de Reposição",
@@ -14,6 +13,4 @@ menu = st.sidebar.selectbox(
 )
 
 if menu == "Reposição de Estoque":
-    reposicao_estoque.main()
-else:
     reposicao_estoque.main()
