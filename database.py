@@ -2,7 +2,7 @@ import os
 import mysql.connector
 from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
 
 MYSQL_HOST = os.getenv("MYSQL_HOST")
 MYSQL_PORT = int(os.getenv("MYSQL_PORT", 3306))
