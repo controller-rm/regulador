@@ -1,7 +1,10 @@
 import streamlit as st
+from modules import reposicao_estoque
 
-def main():
-    st.title("Painel de Reposição")
-    st.success("✅ Aplicação carregada com sucesso!")
+st.set_page_config(
+    page_title="Painel de Reposição",
+    page_icon="📦",
+    layout="wide"
+)
 
-    st.write("Se você está vendo essa mensagem, o deploy está funcionando corretamente.")
+reposicao_estoque.main()
