@@ -1,10 +1,11 @@
 import streamlit as st
-from modules import reposicao_estoque
 
 st.set_page_config(
-    page_title="Painel de Reposição",
-    page_icon="📦",
+    page_title="Teste Deploy",
+    page_icon="✅",
     layout="wide"
 )
 
-reposicao_estoque.main()
+st.title("Teste de Deploy")
+st.success("Aplicação carregada com sucesso!")
+st.write("Se você está vendo esta tela, o deploy do Streamlit está funcionando.")
