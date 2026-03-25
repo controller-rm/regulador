@@ -410,4 +410,6 @@ def main():
         )
 
     except Exception as e:
+        import traceback
         st.error(f"Erro ao carregar os dados: {e}")
+        st.code(traceback.format_exc())
